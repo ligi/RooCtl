@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19"
+
+    lintOptions { 
+      abortOnError false 
+    } 
+}
+
+
+dependencies {
+    repositories {
+        mavenCentral()
+    }
+
+    compile 'com.jakewharton:butterknife:3.0.0'
+    compile 'jsch:jsch:0.1.29'
+    compile 'com.android.support:appcompat-v7:19.0.0'
+
+}
+
