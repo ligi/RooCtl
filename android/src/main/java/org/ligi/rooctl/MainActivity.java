@@ -16,19 +16,18 @@ import com.jcraft.jsch.Session;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
-import butterknife.Views;
+import butterknife.ButterKnife;
 
 public class MainActivity extends ActionBarActivity {
 
     boolean blue_state=false;
     boolean green_state=false;
-    private boolean white_state;
+    boolean white_state;
 
     Connector connector;
 
     @InjectView(R.id.blue)
     ImageView blue;
-
 
     @OnClick(R.id.blue)
     public void blue() {
@@ -92,7 +91,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         connector=new Connector();
         setContentView(R.layout.activity_main);
-        Views.inject(this);
+        ButterKnife.inject(this);
         connector.runCommand("sudo /home/ligi/rcswitch-pi/send 01101 1 0;sudo /home/ligi/rcswitch-pi/send 01101 2 0;sudo /home/ligi/rcswitch-pi/send 01101 3 0");
     }
 

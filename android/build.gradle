@@ -1,42 +1,46 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.10.+'
+        classpath 'com.android.tools.build:gradle:1.2.3'
     }
 }
-
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
-    defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 19
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+	targetCompatibility JavaVersion.VERSION_1_7
     }
 
-    lintOptions { 
+
+    defaultConfig {
+        versionCode 244
+        versionName "2.4.4"
+        minSdkVersion 7
+        targetSdkVersion 22
+	applicationId "org.ligi.roomctrl"
+    }
+
+/*    lintOptions { 
       abortOnError false 
     } 
+*/
 }
 
 
 dependencies {
-    repositories {
-        mavenCentral()
-    }
 
-    compile 'com.jakewharton:butterknife:3.0.0'
-    compile 'jsch:jsch:0.1.29'
-    compile 'com.android.support:appcompat-v7:19.1.0'
-
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.jcraft:jsch:0.1.51'
+    compile 'com.android.support:appcompat-v7:22.1.1'
 }
-
