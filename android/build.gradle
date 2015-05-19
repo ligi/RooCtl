@@ -31,15 +31,10 @@ android {
 	applicationId "org.ligi.roomctrl"
     }
 
-/*    lintOptions { 
-      abortOnError false 
-    } 
-*/
 }
 
 
 dependencies {
-
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.jcraft:jsch:0.1.51'
     compile 'com.android.support:appcompat-v7:22.1.1'
